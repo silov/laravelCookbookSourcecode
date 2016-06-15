@@ -1,5 +1,15 @@
 # Laravel PHP Framework
 
+--------
+
+本项目代码以Laravel PHP框架源代码为基础
+
+本项目为个人学习Laravel过程所实践项目代码
+
+学习实践过程,可供新人参考学习, 参考:[MyLaravelCookBook](https://github.com/silov/myLaravelCookbook)
+
+--------
+
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
