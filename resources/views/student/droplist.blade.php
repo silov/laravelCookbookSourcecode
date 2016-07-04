@@ -57,9 +57,8 @@
                     <td>{{$student['class']}}</td>
                     <td>{{$student['birthday']}}</td>
                     <td class="col-md-3">
-                        <a href="/student/edit?id={{$student['id']}}" target="_blank" class="btn btn-info">编辑</a>
-                        <button class="btn btn-info" onclick="deleteManage('soft_delete','{{$student['id']}}')">休学</button>
-                        <button class="btn btn-info" onclick="deleteManage('destroy','{{$student['id']}}')">退学</button>
+                        <button class="btn btn-info" onclick="deleteManage('restore','{{$student['id']}}')">恢复</button>
+                        <button class="btn btn-info" onclick="deleteManage('delete','{{$student['id']}}')">退学</button>
                     </td>
                 </tr>
                 @endforeach
@@ -85,8 +84,8 @@
             var ajaxUrl = '/student/delete-manage';
             var confirmMsg = '';
             switch (action) {
-                case 'soft_delete' :
-                    confirmMsg = '确认为该生办理休学?';
+                case 'restore' :
+                    confirmMsg = '确认为该生恢复学籍状态?';
                     break;
                 case 'destroy' :
                     confirmMsg = '确认退学?操作后无法撤销';
