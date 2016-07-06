@@ -201,10 +201,10 @@ class StudentController extends Controller
         $model = new Student();
         $student = $model->find($id)->toArray();
 
-        $mes = $request->session()->get('update_word', null);
-        if (!empty($mes)) {
-            $student['update_word'] = $mes;
-        }
+//        $mes = $request->session()->get('update_word', null);
+//        if (!empty($mes)) {
+//            $student['update_word'] = $mes;
+//        }
 
         return view('student.edit', $student);
     }
@@ -224,7 +224,7 @@ class StudentController extends Controller
         $messages = [
             'required'      => '* 不能为空!',
             'id.required'   => '* 学生ID为空!',
-            'id.integer'   => '* 学生ID格式错误!',
+            'id.integer'    => '* 学生ID格式错误!',
             'name.max'      => '* 学生姓名长度过大',
             'sex.between'   => '* 性别填写错误',
             'birthday.date' => '* 生日格式应为 YYYY-mm-dd',

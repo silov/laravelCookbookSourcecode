@@ -39,6 +39,6 @@ class TestController extends BaseController
 
     public function postWhat(Request $request)
     {
-        var_dump($request->name);
+        var_dump($request->get('name'));
     }
 }

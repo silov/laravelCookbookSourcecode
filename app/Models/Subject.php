@@ -18,4 +18,9 @@ class Subject extends BaseModel
     {
         return $this->belongsToMany('App\Models\Student','subject_choose', 'subject_id', 'student_id');
     }
+
+    public function images()
+    {
+        return $this->morphMany('App\Models\Image', 'bind');
+    }
 }

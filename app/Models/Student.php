@@ -169,8 +169,14 @@ class Student extends BaseModel
     }
 
 
-    public function room(){
+    public function room()
+    {
         return $this->belongsTo('App\Models\Room');
+    }
+
+    public function images()
+    {
+        return $this->morphMany('App\Models\Image', 'bind');
     }
 
 }
