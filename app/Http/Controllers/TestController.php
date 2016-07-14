@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Hash;
 
 class TestController extends BaseController
 {
@@ -40,5 +41,13 @@ class TestController extends BaseController
     public function postWhat(Request $request)
     {
         var_dump($request->get('name'));
+    }
+
+    public function getPass()
+    {
+        $pass = '123456';
+        $hash = '$2y$10$seVbbQMepzpDzQ.aQ/I2o.1grrG6GMs/ZeXUk7IEgy/gSIa1bzyl.';
+        $res = Hash::check($pass, $hash);
+        var_dump($res);
     }
 }

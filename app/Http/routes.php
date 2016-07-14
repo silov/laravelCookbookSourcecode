@@ -30,8 +30,17 @@ Route::get('/boot/view', function() {
     return view('test.view');
 });
 
-Route::controller('test', 'TestController');
-Route::controller('student', 'StudentController');
+//Route::controller('test', 'TestController');
+//Route::controller('student', 'StudentController');
+Route::controllers(
+    [
+        'auth'      => 'Auth\AuthController',
+        'password'  => 'Auth\PasswordController',
+        'test'      => 'TestController',
+        'student'   => 'StudentController',
+        'login'     => 'LoginController'
+    ]
+);
 //Route::get('/test/index', 'TestController@index');
 //Route::get('/test/get/{id}', 'TestController@get');
 //Route::get('/test/show', 'TestController@show');
