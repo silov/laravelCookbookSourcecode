@@ -25,9 +25,10 @@ class LoginController extends Controller
     {
         $params = $request->all();
         if (Auth::attempt(['username'   => $params['username'],'password' => $params['password']])) {
-            echo "success";
+            $user = Auth::user()->toArray();
+            var_dump($user);
         } else {
-            echo "faild";
+            return redirect('/');
         }
 //        $rules = [
 //            'username'  => 'required|between:5,20',

@@ -34,13 +34,21 @@ Route::get('/boot/view', function() {
 //Route::controller('student', 'StudentController');
 Route::controllers(
     [
-        'auth'      => 'Auth\AuthController',
-        'password'  => 'Auth\PasswordController',
         'test'      => 'TestController',
         'student'   => 'StudentController',
         'login'     => 'LoginController'
     ]
 );
+
+//认证路由
+//Route::get('auth/login', 'Auth\AuthController@getLogin');
+//Route::post('auth/login', 'Auth\AuthController@postLogin');
+//Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+//注册路由
+//Route::get('auth/register', 'Auth\AuthController@getRegister');
+//Route::post('auth/register', 'Auth\AuthController@postRegister');
+
 //Route::get('/test/index', 'TestController@index');
 //Route::get('/test/get/{id}', 'TestController@get');
 //Route::get('/test/show', 'TestController@show');
@@ -202,7 +210,7 @@ Route::get('/try/preload/roomimages', function() {
 
 Route::get('/try/preload/search', function() {
     $data = \App\Models\Room::with(['students' => function($query){
-        $query->where('name', '野原新之助');
+        $query->select('name')->where('name', '野原新之助');
     }])->get()->toArray();
-    var_dump($data);
+    echo json_encode($data);
 });
